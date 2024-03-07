@@ -1,0 +1,14 @@
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /public/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([A-Za-z0-9\\\/\-_]+)$ index.php?uri=$1 [QSA,L]
+
+ExpiresActive on
+ExpiresByType image/jpg "access plus 1 year"
+ExpiresByType image/gif "access plus 1 year"
+ExpiresByType image/jpeg "access plus 1 year"
+ExpiresByType image/png "access plus 1 year"
+ExpiresByType image/webp "access plus 1 year"
